@@ -12,6 +12,6 @@ apis = [
         api_name = "Swan Retail Adapter API"
         api_path = "swan-retail"
         api_description = "Swan Retail Adapter API"
-        hostname = "https://airslip-dev-adapter-swan-retail-app.azurewebsites.net"
+        hostname = "airslip-dev-adapter-swan-retail-app.azurewebsites.net"
     }
 ]
