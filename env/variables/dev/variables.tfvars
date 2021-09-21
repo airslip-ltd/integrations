@@ -21,6 +21,6 @@ apis = [
         api_path = "airslip"
         api_description = "Airslip Merchant Integration API"
         hostname = "airslip-dev-integration-functions-api-app.azurewebsites.net",
-        openapi_path = "https://airslip-dev-integration-functions-api-app.azurewebsites.net/api/swagger.json"
+        openapi_path = "https://airslip-dev-integration-functions-api-app.azurewebsites.net/swagger.json"
     }
 ]
