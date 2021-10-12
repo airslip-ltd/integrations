@@ -22,5 +22,13 @@ apis = [
         api_description = "Airslip Merchant Integration API"
         hostname = "airslip-qa-integration-functions-api-app.azurewebsites.net",
         openapi_path = "https://airslip-qa-integration-functions-api-app.azurewebsites.net/swagger.json"
+    },
+    {
+        api_resource_suffix = "api2cart"
+        api_name = "Api2Cart Adapter API"
+        api_path = "api2cart"
+        api_description = "Api2Cart Adapter API"
+        hostname = "airslip-qa-adapter-api2cart-processor-app.azurewebsites.net",
+        openapi_path = "https://airslip-qa-adapter-api2cart-processor-app.azurewebsites.net/swagger.json"
     }
 ]
