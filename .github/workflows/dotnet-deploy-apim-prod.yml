@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: QA
     env:
-      TERRAFORM_MODULE_VERSION: 1.0.8
+      TERRAFORM_MODULE_VERSION: 1.0.18
       TERRAFORM_ENVIRONMENT: qa
     steps:
     - uses: actions/checkout@v2
@@ -38,7 +38,7 @@ jobs:
         ARM_TENANT_ID: ${{ secrets.NON_PROD_ARM_TENANT_ID }}
       run: |
         terraform init -backend-config=variables/${{ env.TERRAFORM_ENVIRONMENT }}/backend.tfvars
-        terraform plan -var-file=variables/${{ env.TERRAFORM_ENVIRONMENT }}/variables.tfvars -var 'certificate_password=${{ secrets.AIRSLIP_CERTIFICATE_PASSWORD }}' -out=terraform.tfplan
+        terraform plan -var-file=variables/${{ env.TERRAFORM_ENVIRONMENT }}/variables.tfvars -var 'release_name=${{ github.event.release.tag_name }}' -var 'certificate_password=${{ secrets.AIRSLIP_CERTIFICATE_PASSWORD }}' -out=terraform.tfplan
         terraform apply terraform.tfplan
       working-directory: ./env
 
@@ -47,7 +47,7 @@ jobs:
     needs: [deploy-web-app-qa]
     environment: Production
     env:
-      TERRAFORM_MODULE_VERSION: 1.0.8
+      TERRAFORM_MODULE_VERSION: 1.0.18
       TERRAFORM_ENVIRONMENT: prod
     steps:
     - uses: actions/checkout@v2
@@ -76,6 +76,6 @@ jobs:
         ARM_TENANT_ID: ${{ secrets.PROD_ARM_TENANT_ID }}
       run: |
         terraform init -backend-config=variables/${{ env.TERRAFORM_ENVIRONMENT }}/backend.tfvars
-        terraform plan -var-file=variables/${{ env.TERRAFORM_ENVIRONMENT }}/variables.tfvars -var 'certificate_password=${{ secrets.AIRSLIP_CERTIFICATE_PASSWORD }}' -out=terraform.tfplan
+        terraform plan -var-file=variables/${{ env.TERRAFORM_ENVIRONMENT }}/variables.tfvars -var 'release_name=${{ github.event.release.tag_name }}' -var 'certificate_password=${{ secrets.AIRSLIP_CERTIFICATE_PASSWORD }}' -out=terraform.tfplan
         terraform apply terraform.tfplan
       working-directory: ./env

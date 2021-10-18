@@ -32,6 +32,7 @@ locals {
   api_sku_name = var.api_sku_name
   deployment_agent_group_id = var.deployment_agent_group_id
   apis = var.apis
+  revision = replace(var.release_name, ".", "")
 }
 
 data "azurerm_client_config" "current" {}
@@ -54,7 +55,8 @@ module "api_management" {
     certificate_password = local.certificate_password,
     tenant_id = data.azurerm_client_config.current.tenant_id,
     admin_group_id = local.admin_group_id,
-    deployer_id = local.deployment_agent_group_id
+    deployer_id = local.deployment_agent_group_id,
+    revision = local.revision
   }
 
   apis = local.apis
