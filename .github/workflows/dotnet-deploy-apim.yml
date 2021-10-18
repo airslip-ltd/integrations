@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: Development
     env:
-      TERRAFORM_MODULE_VERSION: 1.0.8
+      TERRAFORM_MODULE_VERSION: 1.0.18
       TERRAFORM_ENVIRONMENT: dev
     steps:
     - uses: actions/checkout@v2
@@ -40,7 +40,7 @@ jobs:
         ARM_TENANT_ID: ${{ secrets.NON_PROD_ARM_TENANT_ID }}
       run: |
         terraform init -backend-config=variables/${{ env.TERRAFORM_ENVIRONMENT }}/backend.tfvars
-        terraform plan -var-file=variables/${{ env.TERRAFORM_ENVIRONMENT }}/variables.tfvars -var 'certificate_password=${{ secrets.AIRSLIP_CERTIFICATE_PASSWORD }}' -out=terraform.tfplan
+        terraform plan -var-file=variables/${{ env.TERRAFORM_ENVIRONMENT }}/variables.tfvars -var 'release_name=v${{ github.run_id }}' -var 'certificate_password=${{ secrets.AIRSLIP_CERTIFICATE_PASSWORD }}' -out=terraform.tfplan
         terraform apply terraform.tfplan
       working-directory: ./env
 
