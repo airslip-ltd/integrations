@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: QA
     env:
-      TERRAFORM_MODULE_VERSION: 1.1.1
+      TERRAFORM_MODULE_VERSION: 6.0.4
       TERRAFORM_ENVIRONMENT: qa
     steps:
     - uses: actions/checkout@v2
@@ -47,7 +47,7 @@ jobs:
     needs: [deploy-web-app-qa]
     environment: Production
     env:
-      TERRAFORM_MODULE_VERSION: 1.1.1
+      TERRAFORM_MODULE_VERSION: 6.0.4
       TERRAFORM_ENVIRONMENT: prod
     steps:
     - uses: actions/checkout@v2

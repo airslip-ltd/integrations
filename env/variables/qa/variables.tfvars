@@ -21,8 +21,8 @@ apis = [
         api_name = "Airslip Merchant Integration API"
         api_path = "airslip"
         api_description = "Airslip Merchant Integration API"
-        hostname = "airslip-qa-integration-functions-api-app.azurewebsites.net",
-        openapi_path = "https://airslip-qa-integration-functions-api-app.azurewebsites.net/swagger.json",
+        hostname = "airslip-qa-merchant-integrations-api-app.azurewebsites.net",
+        openapi_path = "https://airslip-qa-merchant-integrations-api-app.azurewebsites.net/swagger.json",
         from_file = false
     },
     {
@@ -32,6 +32,15 @@ apis = [
         api_description = "Api2Cart Adapter API"
         hostname = "airslip-qa-adapter-api2cart-processor-app.azurewebsites.net",
         openapi_path = "https://airslip-qa-adapter-api2cart-processor-app.azurewebsites.net/swagger.json",
+        from_file = false
+    },
+    {
+        api_resource_suffix = "oauth",
+        api_name = "Integration Hub",
+        api_path = "oauth",
+        api_description = "Integration Hub API",
+        hostname = "airslip-qa-integration-hub-proc-app.azurewebsites.net",
+        openapi_path = "https://airslip-qa-integration-hub-proc-app.azurewebsites.net/swagger.json",
         from_file = false
     }
 ]
