@@ -33,8 +33,6 @@ locals {
   deployment_agent_group_id = var.deployment_agent_group_id
   integration_apis = var.integration_apis
   revision = replace(var.release_name, ".", "")
-
-  resource_group_name = "airslip-${var.short_environment}-integrations-resources"
 }
 
 data "azurerm_client_config" "current" {}
@@ -53,8 +51,8 @@ module "api_management" {
 
   resource_group = {
     use_existing            = true,
-    resource_group_name     = local.resource_group_name,
-    resource_group_location = data.azurerm_resource_group.ingredient_bowl.location
+    resource_group_name     = module.ingredient_bowl.name,
+    resource_group_location = module.ingredient_bowl.location
   }
 
   app_configuration = {
