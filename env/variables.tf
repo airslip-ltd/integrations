@@ -31,7 +31,10 @@ variable "certificate_path" {
 }
 variable "certificate_password" {}
 variable "certificate_name" {}
-variable "app_custom_domain" {}
 variable "deployment_agent_group_id" {}
-variable "integration_apis" {}
 variable "release_name" {}
+
+variable "integration_custom_domain" {}
+variable "integration_apis" {}
+variable "application_custom_domain" {}
+variable "application_apis" {}

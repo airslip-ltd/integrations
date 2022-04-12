@@ -2,10 +2,10 @@ short_environment = "dev"
 location = "UK South"
 environment = "Development"
 certificate_name = "airslip-com-certificate"
-app_custom_domain = "dev-integrations.airslip.com"
 admin_group_id = "4a965f57-8ca7-4af3-ab5c-b7384f6ed4c9"
 deployment_agent_group_id = "78963579-14c3-4ccc-b445-49f805ddaff2"
 
+integration_custom_domain = "dev-integrations.airslip.com"
 integration_apis = [
     {
         api_resource_suffix = "swan-retail",
@@ -46,5 +46,29 @@ integration_apis = [
         openapi_path = "https://airslip-dev-integration-hub-proc-app.azurewebsites.net/swagger.json",
         from_file = false,
         policy = "./variables/dev/integration_api_policy.xml"
+    }
+]
+
+application_custom_domain = "dev-app.airslip.com"
+application_apis = [
+    {
+        api_resource_suffix = "analytics",
+        api_name = "Analytics API",
+        api_path = "analytics",
+        api_description = "Analytics API",
+        hostname = "airslip-dev-analytics-core-api-app.azurewebsites.net",
+        openapi_path = "https://airslip-dev-analytics-core-api-app.azurewebsites.net/swagger/v1/swagger.json",
+        from_file = false,
+        policy = "./variables/dev/analytics_api_policy.xml"
+    },
+    {
+        api_resource_suffix = "customer-portal",
+        api_name = "Customer Portal API",
+        api_path = "customer_portal",
+        api_description = "Customer Portal API",
+        hostname = "airslip-dev-customer-portal-api-app.azurewebsites.net",
+        openapi_path = "https://airslip-dev-customer-portal-api-app.azurewebsites.net/swagger/v1/swagger.json",
+        from_file = false,
+        policy = "./variables/dev/portal_api_policy.xml"
     }
 ]

@@ -2,7 +2,7 @@ short_environment = "qa"
 location = "UK South"
 environment = "QA"
 certificate_name = "airslip-com-certificate"
-app_custom_domain = "qa-integrations.airslip.com"
+integration_custom_domain = "qa-integrations.airslip.com"
 admin_group_id = "4a965f57-8ca7-4af3-ab5c-b7384f6ed4c9"
 deployment_agent_group_id = "78963579-14c3-4ccc-b445-49f805ddaff2"
 
@@ -46,5 +46,29 @@ integration_apis = [
         openapi_path = "https://airslip-qa-integration-hub-proc-app.azurewebsites.net/swagger.json",
         from_file = false,
         policy = "./variables/qa/integration_api_policy.xml"
+    }
+]
+
+application_custom_domain = "qa-app.airslip.com"
+application_apis = [
+    {
+        api_resource_suffix = "analytics",
+        api_name = "Analytics API",
+        api_path = "analytics",
+        api_description = "Analytics API",
+        hostname = "airslip-qa-analytics-core-api-app.azurewebsites.net",
+        openapi_path = "https://airslip-qa-analytics-core-api-app.azurewebsites.net/swagger/v1/swagger.json",
+        from_file = false,
+        policy = "./variables/qa/analytics_api_policy.xml"
+    },
+    {
+        api_resource_suffix = "customer-portal",
+        api_name = "Customer Portal API",
+        api_path = "customer_portal",
+        api_description = "Customer Portal API",
+        hostname = "airslip-qa-customer-portal-api-app.azurewebsites.net",
+        openapi_path = "https://airslip-qa-customer-portal-api-app.azurewebsites.net/swagger/v1/swagger.json",
+        from_file = false,
+        policy = "./variables/qa/portal_api_policy.xml"
     }
 ]
