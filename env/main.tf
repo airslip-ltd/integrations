@@ -81,7 +81,7 @@ module "api_management" {
   apis = local.integration_apis
 }
 
-module "api_management" {
+module "api_management_app" {
   source = "./tf_modules/Airslip.Terraform.Modules/recipes/apim_multiple_apis"
 
   resource_group = {
