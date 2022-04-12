@@ -33,5 +33,5 @@ variable "certificate_password" {}
 variable "certificate_name" {}
 variable "app_custom_domain" {}
 variable "deployment_agent_group_id" {}
-variable "apis" {}
+variable "integration_apis" {}
 variable "release_name" {}

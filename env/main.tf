@@ -31,14 +31,29 @@ locals {
   api_publisher_email = var.api_publisher_email
   api_sku_name = var.api_sku_name
   deployment_agent_group_id = var.deployment_agent_group_id
-  apis = var.apis
+  integration_apis = var.integration_apis
   revision = replace(var.release_name, ".", "")
 }
 
 data "azurerm_client_config" "current" {}
 
+module "ingredient_bowl" {
+  source = "./tf_modules/Airslip.Terraform.Modules/modules/core/resource_group"
+
+  tags              = local.tags
+  app_id            = local.app_id
+  short_environment = local.short_environment
+  location          = local.location
+}
+
 module "api_management" {
   source = "./tf_modules/Airslip.Terraform.Modules/recipes/apim_multiple_apis"
+
+  resource_group = {
+    use_existing            = true,
+    resource_group_name     = local.resource_group_name,
+    resource_group_location = data.azurerm_resource_group.ingredient_bowl.location
+  }
 
   app_configuration = {
     app_id = local.app_id,
@@ -59,6 +74,6 @@ module "api_management" {
     revision = local.revision
   }
 
-  apis = local.apis
+  apis = local.integration_apis
 }
 
