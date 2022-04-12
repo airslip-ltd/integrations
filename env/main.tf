@@ -33,6 +33,8 @@ locals {
   deployment_agent_group_id = var.deployment_agent_group_id
   integration_apis = var.integration_apis
   revision = replace(var.release_name, ".", "")
+
+  resource_group_name = "airslip-${var.short_environment}-integrations-resources"
 }
 
 data "azurerm_client_config" "current" {}
