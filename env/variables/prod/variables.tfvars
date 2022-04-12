@@ -36,16 +36,6 @@ integration_apis = [
         openapi_path = "https://airslip-prod-adapter-api2cart-processor-app.azurewebsites.net/swagger.json",
         from_file = false,
         policy = "./variables/prod/integration_api_policy.xml"
-    },
-    {
-        api_resource_suffix = "oauth",
-        api_name = "Integration Hub",
-        api_path = "oauth",
-        api_description = "Integration Hub API",
-        hostname = "airslip-prod-integration-hub-proc-app.azurewebsites.net",
-        openapi_path = "https://airslip-prod-integration-hub-proc-app.azurewebsites.net/swagger.json",
-        from_file = false,
-        policy = "./variables/prod/integration_api_policy.xml"
     }
 ]
 
