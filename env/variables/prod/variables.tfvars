@@ -14,7 +14,8 @@ apis = [
         api_description = "Swan Retail Adapter API"
         hostname = "airslip-prod-adapter-swan-retail-app.azurewebsites.net",
         openapi_path = "https://airslip-prod-adapter-swan-retail-app.azurewebsites.net/swagger/v1/swagger.json",
-        from_file = false
+        from_file = false,
+        policy = "./variables/prod/integration_api_policy.xml"
     },
     {
         api_resource_suffix = "airslip"
@@ -23,7 +24,8 @@ apis = [
         api_description = "Airslip Merchant Integration API"
         hostname = "airslip-prod-merchant-integrations-api-app.azurewebsites.net",
         openapi_path = "https://airslip-prod-merchant-integrations-api-app.azurewebsites.net/swagger.json",
-        from_file = false
+        from_file = false,
+        policy = "./variables/prod/integration_api_policy.xml"
     },
     {
         api_resource_suffix = "api2cart"
@@ -32,7 +34,8 @@ apis = [
         api_description = "Api2Cart Adapter API"
         hostname = "airslip-prod-adapter-api2cart-processor-app.azurewebsites.net",
         openapi_path = "https://airslip-prod-adapter-api2cart-processor-app.azurewebsites.net/swagger.json",
-        from_file = false
+        from_file = false,
+        policy = "./variables/prod/integration_api_policy.xml"
     },
     {
         api_resource_suffix = "oauth",
@@ -41,6 +44,7 @@ apis = [
         api_description = "Integration Hub API",
         hostname = "airslip-prod-integration-hub-proc-app.azurewebsites.net",
         openapi_path = "https://airslip-prod-integration-hub-proc-app.azurewebsites.net/swagger.json",
-        from_file = false
+        from_file = false,
+        policy = "./variables/prod/integration_api_policy.xml"
     }
 ]
