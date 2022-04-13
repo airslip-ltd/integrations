@@ -12,8 +12,7 @@ integration_apis = [
         api_description = "Swan Retail Adapter API",
         hostname = "airslip-dev-adapter-swan-retail-app.azurewebsites.net",
         openapi_path = "https://airslip-dev-adapter-swan-retail-app.azurewebsites.net/swagger/v1/swagger.json",
-        from_file = false,
-        policy = "./variables/dev/integration_api_policy.xml"
+        from_file = false
     },
     {
         api_resource_suffix = "airslip",
@@ -22,8 +21,7 @@ integration_apis = [
         api_description = "Airslip Merchant Integration API",
         hostname = "airslip-dev-merchant-integrations-api-app.azurewebsites.net",
         openapi_path = "https://airslip-dev-merchant-integrations-api-app.azurewebsites.net/swagger.json",
-        from_file = false,
-        policy = "./variables/dev/integration_api_policy.xml"
+        from_file = false
     },
     {
         api_resource_suffix = "api2cart",
@@ -32,8 +30,7 @@ integration_apis = [
         api_description = "Api2Cart Adapter API",
         hostname = "airslip-dev-adapter-api2cart-processor-app.azurewebsites.net",
         openapi_path = "https://airslip-dev-adapter-api2cart-processor-app.azurewebsites.net/swagger.json",
-        from_file = false,
-        policy = "./variables/dev/integration_api_policy.xml"
+        from_file = false
     }
 ]
 
@@ -46,8 +43,7 @@ application_apis = [
         api_description = "Analytics API",
         hostname = "airslip-dev-analytics-core-api-app.azurewebsites.net",
         openapi_path = "https://airslip-dev-analytics-core-api-app.azurewebsites.net/swagger/v1/swagger.json",
-        from_file = false,
-        policy = "./variables/dev/analytics_api_policy.xml"
+        from_file = false
     },
     {
         api_resource_suffix = "customer-portal",
@@ -56,7 +52,6 @@ application_apis = [
         api_description = "Customer Portal API",
         hostname = "airslip-dev-customer-portal-api-app.azurewebsites.net",
         openapi_path = "https://airslip-dev-customer-portal-api-app.azurewebsites.net/swagger/v1/swagger.json",
-        from_file = false,
-        policy = "./variables/dev/portal_api_policy.xml"
+        from_file = false
     }
 ]

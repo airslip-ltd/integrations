@@ -30,5 +30,6 @@ variable "release_name" {}
 
 variable "integration_custom_domain" {}
 variable "integration_apis" {}
+
 variable "application_custom_domain" {}
 variable "application_apis" {}
