@@ -18,14 +18,10 @@ locals {
   tags = {
     Environment = "${var.environment}"
   }
-  app_id = "integrations"
-  app_id_short = "intg"
+  app_id = "api"
+  app_id_short = "api"
   short_environment = "${var.short_environment}"
   location = "${var.location}"
-  admin_group_id = "${var.admin_group_id}"
-  certificate_name = "${var.certificate_name}"
-  certificate_path = "${var.certificate_path}"
-  certificate_password = "${var.certificate_password}"
   api_publisher_name = var.api_publisher_name
   api_publisher_email = var.api_publisher_email
   api_sku_name = var.api_sku_name
@@ -60,8 +56,8 @@ module "api_management" {
   }
 
   app_configuration = {
-    app_id = local.app_id,
-    app_id_short = local.app_id_short,
+    app_id = "${local.app_id}-integrations",
+    app_id_short = "${local.app_id_short}int",
     short_environment = local.short_environment,
     location = local.location,
     tags = local.tags,
@@ -69,11 +65,7 @@ module "api_management" {
     api_publisher_email = local.api_publisher_email,
     api_sku_name = local.api_sku_name,
     api_custom_domain = local.integration_custom_domain,
-    certificate_name = local.certificate_name, 
-    certificate_path = local.certificate_path, 
-    certificate_password = local.certificate_password,
     tenant_id = data.azurerm_client_config.current.tenant_id,
-    admin_group_id = local.admin_group_id,
     deployer_id = local.deployment_agent_group_id,
     revision = local.revision
   }
@@ -91,7 +83,7 @@ module "api_management_app" {
   }
 
   app_configuration = {
-    app_id = "${local.app_id}-app",
+    app_id = "${local.app_id}-application",
     app_id_short = "${local.app_id_short}app",
     short_environment = local.short_environment,
     location = local.location,
@@ -100,11 +92,7 @@ module "api_management_app" {
     api_publisher_email = local.api_publisher_email,
     api_sku_name = local.api_sku_name,
     api_custom_domain = local.application_custom_domain,
-    certificate_name = local.certificate_name, 
-    certificate_path = local.certificate_path, 
-    certificate_password = local.certificate_password,
     tenant_id = data.azurerm_client_config.current.tenant_id,
-    admin_group_id = local.admin_group_id,
     deployer_id = local.deployment_agent_group_id,
     revision = local.revision
   }

@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: Development
     env:
-      TERRAFORM_MODULE_VERSION: 6.3.4
+      TERRAFORM_MODULE_VERSION: 6.4.0
       TERRAFORM_ENVIRONMENT: dev
     steps:
     - uses: actions/checkout@v2
@@ -31,6 +31,12 @@ jobs:
     - name: Install Terraform Modules
       run: nuget install Airslip.Terraform.Modules -Version ${{ env.TERRAFORM_MODULE_VERSION }} -OutputDirectory ./env/tf_modules -x
 
+    - uses: cschleiden/replace-tokens@v1
+      with:
+        files: '["./env/variables/secrets.tfvars"]'
+      env:
+        RELEASE_NAME: v${{ github.run_id }}
+      
     - name: Terraform Update
       id: "terraform_update"
       env:
@@ -40,7 +46,7 @@ jobs:
         ARM_TENANT_ID: ${{ secrets.NON_PROD_ARM_TENANT_ID }}
       run: |
         terraform init -backend-config=variables/${{ env.TERRAFORM_ENVIRONMENT }}/backend.tfvars
-        terraform plan -var-file=variables/${{ env.TERRAFORM_ENVIRONMENT }}/variables.tfvars -var 'release_name=v${{ github.run_id }}' -var 'certificate_password=${{ secrets.AIRSLIP_CERTIFICATE_PASSWORD }}' -out=terraform.tfplan
+        terraform plan -var-file=variables/${{ env.TERRAFORM_ENVIRONMENT }}/variables.tfvars -var-file=variables/secrets.tfvars -out=terraform.tfplan
         terraform apply terraform.tfplan
       working-directory: ./env
 

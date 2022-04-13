@@ -1,0 +1,1 @@
+release_name = "#{RELEASE_NAME}#"
