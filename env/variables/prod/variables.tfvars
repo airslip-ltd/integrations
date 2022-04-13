@@ -12,8 +12,7 @@ integration_apis = [
         api_description = "Swan Retail Adapter API"
         hostname = "airslip-prod-adapter-swan-retail-app.azurewebsites.net",
         openapi_path = "https://airslip-prod-adapter-swan-retail-app.azurewebsites.net/swagger/v1/swagger.json",
-        from_file = false,
-        policy = "./variables/prod/integration_api_policy.xml"
+        from_file = false
     },
     {
         api_resource_suffix = "airslip"
@@ -22,8 +21,7 @@ integration_apis = [
         api_description = "Airslip Merchant Integration API"
         hostname = "airslip-prod-merchant-integrations-api-app.azurewebsites.net",
         openapi_path = "https://airslip-prod-merchant-integrations-api-app.azurewebsites.net/swagger.json",
-        from_file = false,
-        policy = "./variables/prod/integration_api_policy.xml"
+        from_file = false
     },
     {
         api_resource_suffix = "api2cart"
@@ -32,8 +30,7 @@ integration_apis = [
         api_description = "Api2Cart Adapter API"
         hostname = "airslip-prod-adapter-api2cart-processor-app.azurewebsites.net",
         openapi_path = "https://airslip-prod-adapter-api2cart-processor-app.azurewebsites.net/swagger.json",
-        from_file = false,
-        policy = "./variables/prod/integration_api_policy.xml"
+        from_file = false
     }
 ]
 
@@ -46,8 +43,7 @@ application_apis = [
         api_description = "Analytics API",
         hostname = "airslip-prod-analytics-core-api-app.azurewebsites.net",
         openapi_path = "https://airslip-prod-analytics-core-api-app.azurewebsites.net/swagger/v1/swagger.json",
-        from_file = false,
-        policy = "./variables/prod/analytics_api_policy.xml"
+        from_file = false
     },
     {
         api_resource_suffix = "customer-portal",
@@ -56,7 +52,6 @@ application_apis = [
         api_description = "Customer Portal API",
         hostname = "airslip-prod-customer-portal-api-app.azurewebsites.net",
         openapi_path = "https://airslip-prod-customer-portal-api-app.azurewebsites.net/swagger/v1/swagger.json",
-        from_file = false,
-        policy = "./variables/prod/portal_api_policy.xml"
+        from_file = false
     }
 ]

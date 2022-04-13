@@ -30,9 +30,11 @@ locals {
 
   integration_apis = var.integration_apis
   integration_custom_domain = var.integration_custom_domain
+  integration_api_policy = "./variables/${var.short_environment}/policies/integration_api_policy.xml"
 
   application_apis = var.application_apis
   application_custom_domain = var.application_custom_domain
+  application_api_policy = "./variables/${var.short_environment}/policies/application_api_policy.xml"
 }
 
 data "azurerm_client_config" "current" {}
@@ -67,7 +69,8 @@ module "api_management" {
     api_custom_domain = local.integration_custom_domain,
     tenant_id = data.azurerm_client_config.current.tenant_id,
     deployer_id = local.deployment_agent_group_id,
-    revision = local.revision
+    revision = local.revision,
+    policy = local.integration_api_policy
   }
 
   apis = local.integration_apis
@@ -94,7 +97,8 @@ module "api_management_app" {
     api_custom_domain = local.application_custom_domain,
     tenant_id = data.azurerm_client_config.current.tenant_id,
     deployer_id = local.deployment_agent_group_id,
-    revision = local.revision
+    revision = local.revision,
+    policy = local.application_api_policy
   }
 
   apis = local.application_apis

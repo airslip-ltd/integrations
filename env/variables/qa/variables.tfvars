@@ -12,8 +12,7 @@ integration_apis = [
         api_description = "Swan Retail Adapter API"
         hostname = "airslip-qa-adapter-swan-retail-app.azurewebsites.net",
         openapi_path = "https://airslip-qa-adapter-swan-retail-app.azurewebsites.net/swagger/v1/swagger.json",
-        from_file = false,
-        policy = "./variables/qa/integration_api_policy.xml"
+        from_file = false
     },
     {
         api_resource_suffix = "airslip"
@@ -22,8 +21,7 @@ integration_apis = [
         api_description = "Airslip Merchant Integration API"
         hostname = "airslip-qa-merchant-integrations-api-app.azurewebsites.net",
         openapi_path = "https://airslip-qa-merchant-integrations-api-app.azurewebsites.net/swagger.json",
-        from_file = false,
-        policy = "./variables/qa/integration_api_policy.xml"
+        from_file = false
     },
     {
         api_resource_suffix = "api2cart"
@@ -32,8 +30,7 @@ integration_apis = [
         api_description = "Api2Cart Adapter API"
         hostname = "airslip-qa-adapter-api2cart-processor-app.azurewebsites.net",
         openapi_path = "https://airslip-qa-adapter-api2cart-processor-app.azurewebsites.net/swagger.json",
-        from_file = false,
-        policy = "./variables/qa/integration_api_policy.xml"
+        from_file = false
     }
 ]
 
@@ -46,8 +43,7 @@ application_apis = [
         api_description = "Analytics API",
         hostname = "airslip-qa-analytics-core-api-app.azurewebsites.net",
         openapi_path = "https://airslip-qa-analytics-core-api-app.azurewebsites.net/swagger/v1/swagger.json",
-        from_file = false,
-        policy = "./variables/qa/analytics_api_policy.xml"
+        from_file = false
     },
     {
         api_resource_suffix = "customer-portal",
@@ -56,7 +52,6 @@ application_apis = [
         api_description = "Customer Portal API",
         hostname = "airslip-qa-customer-portal-api-app.azurewebsites.net",
         openapi_path = "https://airslip-qa-customer-portal-api-app.azurewebsites.net/swagger/v1/swagger.json",
-        from_file = false,
-        policy = "./variables/qa/portal_api_policy.xml"
+        from_file = false
     }
 ]
