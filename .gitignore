@@ -34,6 +34,5 @@ override.tf.json
 # Misc files
 *.lock.*
 *.secrets.tfvars
-secrets.tfvars
 
 tf_modules

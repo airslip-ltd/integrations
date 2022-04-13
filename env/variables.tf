@@ -25,12 +25,6 @@ variable "api_sku_name" {
   default = "Consumption_0"
 }
 
-variable "admin_group_id" {}
-variable "certificate_path" {
-  default = "./Certificates/airslip.com.pfx"
-}
-variable "certificate_password" {}
-variable "certificate_name" {}
 variable "deployment_agent_group_id" {}
 variable "release_name" {}
 
