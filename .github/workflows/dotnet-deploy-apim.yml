@@ -1,4 +1,4 @@
-name: Dev - Deploy API Management
+name: Development - Build and Deploy
 
 on:
  workflow_dispatch:

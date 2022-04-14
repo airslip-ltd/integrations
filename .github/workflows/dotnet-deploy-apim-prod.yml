@@ -1,4 +1,4 @@
-name: Prod - Deploy API Management
+name: Release - Build and Deploy
 
 on:
   release:
@@ -48,12 +48,14 @@ jobs:
       working-directory: ./env
 
   deploy-web-app-prod:
+
+  deploy-web-app-demo:
     runs-on: ubuntu-latest
     needs: [deploy-web-app-qa]
-    environment: Production
+    environment: Demo
     env:
       TERRAFORM_MODULE_VERSION: 6.4.5
-      TERRAFORM_ENVIRONMENT: prod
+      TERRAFORM_ENVIRONMENT: demo
     steps:
     - uses: actions/checkout@v2
       with:
