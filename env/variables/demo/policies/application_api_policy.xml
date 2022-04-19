@@ -4,6 +4,7 @@
             <allowed-origins>
                 <origin>https://demo-secure.airslip.com</origin>
                 <origin>https://demo-admin.airslip.com</origin>
+                <origin>https://local.secure.dev.ngrok.io</origin>
             </allowed-origins>
             <allowed-methods preflight-result-max-age="300">
                 <method>*</method>
