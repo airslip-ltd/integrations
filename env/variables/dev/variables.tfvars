@@ -3,7 +3,7 @@ location = "UK South"
 environment = "Development"
 deployment_agent_group_id = "78963579-14c3-4ccc-b445-49f805ddaff2"
 
-api_sku_name = "Developer_1"
+api_sku_name = "Basic_1"
 
 integration_custom_domain = "dev-integrations.airslip.com"
 integration_apis = [
