@@ -56,8 +56,8 @@ application_apis = [
     }
 ]
 
-application_custom_domain = "qa-api.airslip.com"
-application_apis = [
+external_custom_domain = "qa-api.airslip.com"
+external_apis = [
     {
         api_resource_suffix = "analytics",
         api_name = "Analytics API",
