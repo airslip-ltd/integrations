@@ -33,7 +33,7 @@ application_apis = [
         api_path = "analytics",
         api_description = "Analytics API",
         hostname = "airslip-demo-analytics-core-api-app.azurewebsites.net",
-        openapi_path = "https://airslip-demo-analytics-core-api-app.azurewebsites.net/swagger/v1/swagger.json",
+        openapi_path = "https://airslip-demo-analytics-core-api-app.azurewebsites.net/swagger/2021.11/swagger.json",
         from_file = false
     },
     {
