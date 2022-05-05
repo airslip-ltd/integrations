@@ -33,3 +33,6 @@ variable "integration_apis" {}
 
 variable "application_custom_domain" {}
 variable "application_apis" {}
+
+variable "external_custom_domain" {}
+variable "external_apis" {}

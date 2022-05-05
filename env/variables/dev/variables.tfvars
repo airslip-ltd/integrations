@@ -55,3 +55,16 @@ application_apis = [
         from_file = false
     }
 ]
+
+application_custom_domain = "dev-api.airslip.com"
+application_apis = [
+    {
+        api_resource_suffix = "analytics",
+        api_name = "Analytics API",
+        api_path = "analytics",
+        api_description = "Analytics API",
+        hostname = "airslip-dev-analytics-core-api-app.azurewebsites.net",
+        openapi_path = "https://airslip-dev-analytics-core-api-app.azurewebsites.net/swagger/2022.5/swagger.json",
+        from_file = false
+    }
+]
